@@ -5,11 +5,10 @@ public let DidPerformUnauthorizedOperation = "DidPerformUnauthorizedOperation"
 class BackendService {
     
     private let conf: BackendConfiguration
-    private let service: NetworkService!
+    private let service = NetworkService()
     
     init(_ conf: BackendConfiguration) {
         self.conf = conf
-        self.service = NetworkService()
     }
     
     func request(request: BackendAPIRequest,
