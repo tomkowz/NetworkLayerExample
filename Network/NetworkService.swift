@@ -10,25 +10,24 @@ class NetworkService {
         case GET, POST, PUT, DELETE
     }
     
-    enum Query {
+    enum QueryType {
         case JSON, PATH
     }
     
-    func request(url: URL, method: Method, query: Query?,
+    func makeRequest(for url: URL, method: Method, query type: QueryType?,
                  params: [String: AnyObject]? = nil,
                  headers: [String: String]? = nil,
                  success: ((Data?) -> Void)? = nil,
                  failure: ((data: Data?, error: NSError?, responseCode: Int) -> Void)? = nil) {
         
-        var mutableRequest = NSMutableURLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
-                                                 timeoutInterval: 10.0)
-        if let params = params, let query = query {
-            switch query {
-            case .JSON:
-                mutableRequest.httpBody = json(params: params)
-            case .PATH:
-                mutableRequest = path(params: params, url: url)!
-            }
+        guard let params = params, let type = type else {
+            failure?(data: nil, error: nil, responseCode: 499)
+            return
+        }
+        
+        guard let mutableRequest = makeQuery(for: url, params: params, type: type) else {
+            failure?(data: nil, error: nil, responseCode: 499)
+            return
         }
         
         mutableRequest.allHTTPHeaderFields = headers
@@ -74,25 +73,33 @@ class NetworkService {
         task?.cancel()
     }
     
-    //MARK: Private
-    private func json(params: [String: AnyObject]) -> Data {
-        return try! JSONSerialization.data(withJSONObject: params, options: [])
-    }
     
-    private func path(params: [String: AnyObject], url: URL) -> NSMutableURLRequest? {
-        var query = ""
-        
-        for (key, value) in params {
-            query = query + key + "=" + (value as! String) + "&"
+    //MARK: Private
+    private func makeQuery(for url: URL, params: [String: AnyObject], type: QueryType) -> NSMutableURLRequest? {
+        switch type {
+        case .JSON:
+            let mutableRequest = NSMutableURLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
+                                                     timeoutInterval: 10.0)
+            mutableRequest.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
+            
+            return mutableRequest
+        case .PATH:
+            var query = ""
+            
+            for (key, value) in params {
+                query = query + key + "=" + (value as! String) + "&"
+            }
+            
+            var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+            components?.query = "\(query)"
+            
+            guard let comp = components else {
+                return nil
+            }
+            return NSMutableURLRequest(url: comp.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
         }
         
-        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        components?.query = "\(query)"
-        
-        guard let comp = components else {
-            return nil
-        }
-        return NSMutableURLRequest(url: comp.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
     }
 }
+
 
