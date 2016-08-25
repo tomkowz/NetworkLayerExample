@@ -10,19 +10,29 @@ class NetworkService {
         case GET, POST, PUT, DELETE
     }
     
-    func request(url: URL, method: Method,
+    enum Query {
+        case JSON, PATH
+    }
+    
+    func request(url: URL, method: Method, query: Query?,
                  params: [String: AnyObject]? = nil,
                  headers: [String: String]? = nil,
                  success: ((Data?) -> Void)? = nil,
                  failure: ((data: Data?, error: NSError?, responseCode: Int) -> Void)? = nil) {
         
-        let mutableRequest = NSMutableURLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
+        var mutableRequest = NSMutableURLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
                                                  timeoutInterval: 10.0)
+        if let params = params, let query = query {
+            switch query {
+            case .JSON:
+                mutableRequest.httpBody = json(params: params)
+            case .PATH:
+                mutableRequest = path(params: params, url: url)!
+            }
+        }
+        
         mutableRequest.allHTTPHeaderFields = headers
         mutableRequest.httpMethod = method.rawValue
-        if let params = params {
-            mutableRequest.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
-        }
         
         let session = URLSession.shared
 
@@ -63,4 +73,26 @@ class NetworkService {
     func cancel() {
         task?.cancel()
     }
+    
+    //MARK: Private
+    private func json(params: [String: AnyObject]) -> Data {
+        return try! JSONSerialization.data(withJSONObject: params, options: [])
+    }
+    
+    private func path(params: [String: AnyObject], url: URL) -> NSMutableURLRequest? {
+        var query = ""
+        
+        for (key, value) in params {
+            query = query + key + "=" + (value as! String) + "&"
+        }
+        
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        components?.query = "\(query)"
+        
+        guard let comp = components else {
+            return nil
+        }
+        return NSMutableURLRequest(url: comp.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+    }
 }
+

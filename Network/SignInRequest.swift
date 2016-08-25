@@ -18,6 +18,8 @@ final class SignInRequest: BackendAPIRequest {
         return .POST
     }
     
+    var query: NetworkService.Query?
+    
     var parameters: [String : AnyObject]? {
         return [
             "email": email,

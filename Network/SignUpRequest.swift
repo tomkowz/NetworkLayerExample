@@ -18,6 +18,8 @@ final class SignUpRequest: BackendAPIRequest {
         return .POST
     }
     
+    var query: NetworkService.Query?
+    
     var parameters: [String: AnyObject]? {
         var params = [String: AnyObject]()
         params["first_name"] = user.firstName
