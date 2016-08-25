@@ -18,7 +18,9 @@ final class SignUpRequest: BackendAPIRequest {
         return .POST
     }
     
-    var query: NetworkService.Query?
+    var query: NetworkService.QueryType? {
+        return .JSON
+    }
     
     var parameters: [String: AnyObject]? {
         var params = [String: AnyObject]()
