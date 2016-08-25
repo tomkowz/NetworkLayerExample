@@ -2,32 +2,41 @@ import Foundation
 
 class NetworkService {
     
-    private var task: NSURLSessionDataTask?
-    private var successCodes: Range<Int> = 200..<299
-    private var failureCodes: Range<Int> = 400..<499
+    private var task: URLSessionDataTask?
+    private var successCodes: CountableRange<Int> = 200..<299
+    private var failureCodes: CountableRange<Int> = 400..<499
     
     enum Method: String {
         case GET, POST, PUT, DELETE
     }
     
-    func request(url url: NSURL, method: Method,
+    enum QueryType {
+        case JSON, PATH
+    }
+    
+    func makeRequest(for url: URL, method: Method, query type: QueryType?,
                  params: [String: AnyObject]? = nil,
                  headers: [String: String]? = nil,
-                 success: (NSData? -> Void)? = nil,
-                 failure: ((data: NSData?, error: NSError?, responseCode: Int) -> Void)? = nil) {
+                 success: ((Data?) -> Void)? = nil,
+                 failure: ((data: Data?, error: NSError?, responseCode: Int) -> Void)? = nil) {
         
-        let mutableRequest = NSMutableURLRequest(URL: url, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData,
-                                                 timeoutInterval: 10.0)
-        mutableRequest.allHTTPHeaderFields = headers
-        mutableRequest.HTTPMethod = method.rawValue
-        if let params = params {
-            mutableRequest.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(params, options: [])
+        guard let params = params, let type = type else {
+            failure?(data: nil, error: nil, responseCode: 499)
+            return
         }
         
-        let session = NSURLSession.sharedSession()
-        task = session.dataTaskWithRequest(mutableRequest, completionHandler: { data, response, error in
-            
-            guard let httpResponse = response as? NSHTTPURLResponse else {
+        guard let mutableRequest = makeQuery(for: url, params: params, type: type) else {
+            failure?(data: nil, error: nil, responseCode: 499)
+            return
+        }
+        
+        mutableRequest.allHTTPHeaderFields = headers
+        mutableRequest.httpMethod = method.rawValue
+        
+        let session = URLSession.shared
+
+        task = session.dataTask(with: mutableRequest as URLRequest, completionHandler: { (data, response, error) in
+            guard let httpResponse = response as? HTTPURLResponse else {
                 failure?(data: data, error: error, responseCode: 0)
                 return
             }
@@ -63,4 +72,34 @@ class NetworkService {
     func cancel() {
         task?.cancel()
     }
+    
+    
+    //MARK: Private
+    private func makeQuery(for url: URL, params: [String: AnyObject], type: QueryType) -> NSMutableURLRequest? {
+        switch type {
+        case .JSON:
+            let mutableRequest = NSMutableURLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
+                                                     timeoutInterval: 10.0)
+            mutableRequest.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
+            
+            return mutableRequest
+        case .PATH:
+            var query = ""
+            
+            for (key, value) in params {
+                query = query + key + "=" + (value as! String) + "&"
+            }
+            
+            var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+            components?.query = "\(query)"
+            
+            guard let comp = components else {
+                return nil
+            }
+            return NSMutableURLRequest(url: comp.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+        }
+        
+    }
 }
+
+

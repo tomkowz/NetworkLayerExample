@@ -4,8 +4,8 @@ public class SignInOperation: ServiceOperation {
     
     private let request: SignInRequest
     
-    public var success: (SignInItem -> Void)?
-    public var failure: (NSError -> Void)?
+    public var success: ((SignInItem) -> Void)?
+    public var failure: ((NSError) -> Void)?
     
     public init(email: String, password: String) {
         request = SignInRequest(email: email, password: password)
@@ -17,7 +17,7 @@ public class SignInOperation: ServiceOperation {
         service.request(request, success: handleSuccess, failure: handleFailure)
     }
     
-    private func handleSuccess(response: AnyObject?) {
+    private func handleSuccess(_ response: AnyObject?) {
         do {
             let item = try SignInResponseMapper.process(response)
             self.success?(item)
@@ -27,7 +27,7 @@ public class SignInOperation: ServiceOperation {
         }
     }
     
-    private func handleFailure(error: NSError) {
+    private func handleFailure(_ error: NSError) {
         self.failure?(error)
         self.finish()
     }

@@ -1,35 +1,35 @@
 import Foundation
 
-public class NetworkOperation: NSOperation {
+public class NetworkOperation: Operation {
     
     private var _ready: Bool
-    public override var ready: Bool {
+    public override var isReady: Bool {
         get { return _ready }
         set { update({ self._ready = newValue }, key: "isReady") }
     }
     
     private var _executing: Bool
-    public override var executing: Bool {
+    public override var isExecuting: Bool {
         get { return _executing }
         set { update({ self._executing = newValue }, key: "isExecuting") }
     }
     
     private var _finished: Bool
-    public override var finished: Bool {
+    public override var isFinished: Bool {
         get { return _finished }
         set { update({ self._finished = newValue }, key: "isFinished") }
     }
     
     private var _cancelled: Bool
-    public override var cancelled: Bool {
+    public override var isCancelled: Bool {
         get { return _cancelled }
         set { update({ self._cancelled = newValue }, key: "isCancelled") }
     }
     
-    private func update(change: Void -> Void, key: String) {
-        willChangeValueForKey(key)
+    private func update(_ change: (Void) -> Void, key: String) {
+        willChangeValue(forKey: key)
         change()
-        didChangeValueForKey(key)
+        didChangeValue(forKey: key)
     }
     
     override init() {
@@ -41,16 +41,16 @@ public class NetworkOperation: NSOperation {
         name = "Network Operation"
     }
     
-    public override var asynchronous: Bool {
+    public override var isAsynchronous: Bool {
         return true
     }
     
     public override func start() {
-        if self.executing == false {
-            self.ready = false
-            self.executing = true
-            self.finished = false
-            self.cancelled = false
+        if self.isExecuting == false {
+            self.isReady = false
+            self.isExecuting = true
+            self.isFinished = false
+            self.isCancelled = false
             print("\(self.name!) operation started.")
         }
     }
@@ -58,13 +58,13 @@ public class NetworkOperation: NSOperation {
     /// Used only by subclasses. Externally you should use `cancel`.
     func finish() {
         print("\(self.name!) operation finished.")
-        self.executing = false
-        self.finished = true
+        self.isExecuting = false
+        self.isFinished = true
     }
     
     public override func cancel() {
         print("\(self.name!) operation cancelled.")
-        self.executing = false
-        self.cancelled = true
+        self.isExecuting = false
+        self.isCancelled = true
     }
 }
