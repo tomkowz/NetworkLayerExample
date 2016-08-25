@@ -21,7 +21,7 @@ class BackendService {
         // Set authentication token if available.
 //        headers?["X-Api-Auth-Token"] = BackendAuth.shared.token
         
-        service.request(url: url, method: request.method, params: request.parameters, headers: headers, success: { data in
+        service.request(url: url!, method: request.method, params: request.parameters, headers: headers, success: { data in
             var json: AnyObject? = nil
             if let data = data {
                 json = try? NSJSONSerialization.JSONObjectWithData(data, options: [])
