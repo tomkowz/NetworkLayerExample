@@ -81,7 +81,7 @@ class NetworkService {
         case .path:
             var query = ""
             
-            params.foreach { key, value in
+            params.forEach { key, value in
                 query = query + "\(key)=\(value)&"
             }
             
