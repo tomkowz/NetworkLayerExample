@@ -17,7 +17,7 @@ class BackendService {
         
         let url = conf.baseURL.appendingPathComponent(request.endpoint)
         
-        let headers = request.headers
+        var headers = request.headers
         // Set authentication token if available.
 //        headers?["X-Api-Auth-Token"] = BackendAuth.shared.token
         
