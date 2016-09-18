@@ -81,10 +81,8 @@ class NetworkService {
         case .path:
             var query = ""
             
-            if let params = params {
-                for (key, value) in params {
-                    query = query + key + "=" + ("\(value)") + "&"
-                }
+            params.foreach { key, value in
+                query = query + "\(key)=\(value)&"
             }
             
             var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
