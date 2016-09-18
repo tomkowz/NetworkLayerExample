@@ -3,18 +3,17 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         NetworkLayerConfiguration.setup()
         Demo.performSignUp()
         return true
     }
 }
 
-// Not working because there is no real server configured in 
+// Not working because there is no real server configured in
 // `NetworkLayerConfiguration` class.
 class Demo {
     
