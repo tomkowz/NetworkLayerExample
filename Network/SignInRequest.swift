@@ -18,7 +18,7 @@ final class SignInRequest: BackendAPIRequest {
         return .post
     }
     
-    var query: NetworkService.QueryType? {
+    var query: NetworkService.QueryType {
         return .json
     }
     

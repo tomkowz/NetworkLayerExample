@@ -25,10 +25,7 @@ class NetworkService {
             return
         }
         
-        guard var mutableRequest = makeQuery(for: url, params: params, type: type) else {
-            failure?(nil, nil, 499)
-            return
-        }
+        var mutableRequest = makeQuery(for: url, params: params, type: type)
         
         mutableRequest.allHTTPHeaderFields = headers
         mutableRequest.httpMethod = method.rawValue
@@ -75,7 +72,7 @@ class NetworkService {
     
     
     //MARK: Private
-    private func makeQuery(for url: URL, params: [String: Any], type: QueryType) -> URLRequest? {
+    private func makeQuery(for url: URL, params: [String: Any], type: QueryType) -> URLRequest {
         switch type {
         case .json:
             var mutableRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
@@ -87,16 +84,13 @@ class NetworkService {
             var query = ""
             
             for (key, value) in params {
-                query = query + key + "=" + (value as! String) + "&"
+                query = query + key + "=" + ("\(value)") + "&"
             }
             
-            var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-            components?.query = "\(query)"
-            
-            guard let comp = components else {
-                return nil
-            }
-            return URLRequest(url: comp.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+            var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
+            components.query = query
+
+            return URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
         }
         
     }
