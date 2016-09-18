@@ -2,28 +2,29 @@ import Foundation
 
 public class NetworkOperation: Operation {
     
-    private var _ready: Bool
+    private var _isReady: Bool
     public override var isReady: Bool {
-        get { return _ready }
-        set { update({ self._ready = newValue }, key: "isReady") }
+        get { return _isReady }
+        set { update(
+            { self._isReady = newValue }, key: "isReady") }
     }
     
-    private var _executing: Bool
+    private var _isExecuting: Bool
     public override var isExecuting: Bool {
-        get { return _executing }
-        set { update({ self._executing = newValue }, key: "isExecuting") }
+        get { return _isExecuting }
+        set { update({ self._isExecuting = newValue }, key: "isExecuting") }
     }
     
-    private var _finished: Bool
+    private var _isFinished: Bool
     public override var isFinished: Bool {
-        get { return _finished }
-        set { update({ self._finished = newValue }, key: "isFinished") }
+        get { return _isFinished }
+        set { update({ self._isFinished = newValue }, key: "isFinished") }
     }
     
-    private var _cancelled: Bool
+    private var _isCancelled: Bool
     public override var isCancelled: Bool {
-        get { return _cancelled }
-        set { update({ self._cancelled = newValue }, key: "isCancelled") }
+        get { return _isCancelled }
+        set { update({ self._isCancelled = newValue }, key: "isCancelled") }
     }
     
     private func update(_ change: (Void) -> Void, key: String) {
@@ -33,10 +34,10 @@ public class NetworkOperation: Operation {
     }
     
     override init() {
-        _ready = true
-        _executing = false
-        _finished = false
-        _cancelled = false
+        _isReady = true
+        _isExecuting = false
+        _isFinished = false
+        _isCancelled = false
         super.init()
         name = "Network Operation"
     }
