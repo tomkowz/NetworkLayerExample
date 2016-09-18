@@ -7,11 +7,11 @@ class NetworkService {
     private var failureCodes: CountableRange<Int> = 400..<499
     
     enum Method: String {
-        case GET, POST, PUT, DELETE
+        case get, post, put, delete
     }
     
     enum QueryType {
-        case JSON, PATH
+        case json, path
     }
     
     func makeRequest(for url: URL, method: Method, query type: QueryType?,
@@ -77,13 +77,13 @@ class NetworkService {
     //MARK: Private
     private func makeQuery(for url: URL, params: [String: Any], type: QueryType) -> URLRequest? {
         switch type {
-        case .JSON:
+        case .json:
             var mutableRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
                                                      timeoutInterval: 10.0)
             mutableRequest.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
             
             return mutableRequest
-        case .PATH:
+        case .path:
             var query = ""
             
             for (key, value) in params {
