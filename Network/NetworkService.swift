@@ -14,16 +14,12 @@ class NetworkService {
         case json, path
     }
     
-    func makeRequest(for url: URL, method: Method, query type: QueryType?,
-                 params: [String: Any]? = nil,
-                 headers: [String: String]? = nil,
-                 success: ((Data?) -> Void)? = nil,
-                 failure: ((_ data: Data?, _ error: NSError?, _ responseCode: Int) -> Void)? = nil) {
+    func makeRequest(for url: URL, method: Method, query type: QueryType,
+                     params: [String: Any]? = nil,
+                     headers: [String: String]? = nil,
+                     success: ((Data?) -> Void)? = nil,
+                     failure: ((_ data: Data?, _ error: NSError?, _ responseCode: Int) -> Void)? = nil) {
         
-        guard let params = params, let type = type else {
-            failure?(nil, nil, 499)
-            return
-        }
         
         var mutableRequest = makeQuery(for: url, params: params, type: type)
         
@@ -31,7 +27,7 @@ class NetworkService {
         mutableRequest.httpMethod = method.rawValue
         
         let session = URLSession.shared
-
+        
         task = session.dataTask(with: mutableRequest as URLRequest, completionHandler: { (data, response, error) in
             guard let httpResponse = response as? HTTPURLResponse else {
                 failure?(data, error as? NSError, 0)
@@ -72,24 +68,28 @@ class NetworkService {
     
     
     //MARK: Private
-    private func makeQuery(for url: URL, params: [String: Any], type: QueryType) -> URLRequest {
+    private func makeQuery(for url: URL, params: [String: Any]?, type: QueryType) -> URLRequest {
         switch type {
         case .json:
             var mutableRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
-                                                     timeoutInterval: 10.0)
-            mutableRequest.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
+                                            timeoutInterval: 10.0)
+            if let params = params {
+                mutableRequest.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
+            }
             
             return mutableRequest
         case .path:
             var query = ""
             
-            for (key, value) in params {
-                query = query + key + "=" + ("\(value)") + "&"
+            if let params = params {
+                for (key, value) in params {
+                    query = query + key + "=" + ("\(value)") + "&"
+                }
             }
             
             var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
             components.query = query
-
+            
             return URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
         }
         
