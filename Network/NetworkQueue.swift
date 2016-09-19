@@ -4,11 +4,11 @@ public class NetworkQueue {
     
     public static var shared: NetworkQueue!
     
-    let queue = NSOperationQueue()
+    let queue = OperationQueue()
     
     public init() {}
     
-    public func addOperation(op: NSOperation) {
+    public func addOperation(_ op: Operation) {
         queue.addOperation(op)
     }
 }

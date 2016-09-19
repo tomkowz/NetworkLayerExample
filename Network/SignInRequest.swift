@@ -15,10 +15,14 @@ final class SignInRequest: BackendAPIRequest {
     }
     
     var method: NetworkService.Method {
-        return .POST
+        return .post
     }
     
-    var parameters: [String : AnyObject]? {
+    var query: NetworkService.QueryType {
+        return .json
+    }
+    
+    var parameters: [String : Any]? {
         return [
             "email": email,
             "password": password
