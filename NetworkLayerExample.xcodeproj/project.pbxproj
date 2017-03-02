@@ -35,6 +35,8 @@
 		6D02D7941D57325700CA76B9 /* ParsedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7931D57325700CA76B9 /* ParsedItem.swift */; };
 		6D02D7971D57329600CA76B9 /* NSError+Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7961D57329600CA76B9 /* NSError+Failure.swift */; };
 		6D02D79A1D57346700CA76B9 /* NetworkLayerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7981D57346300CA76B9 /* NetworkLayerConfiguration.swift */; };
+		D95DED9D1E67282700676626 /* String+Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95DED9C1E67282700676626 /* String+Encode.swift */; };
+		D95DED9F1E682C2300676626 /* Data+AppendString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95DED9E1E682C2300676626 /* Data+AppendString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		6D02D7931D57325700CA76B9 /* ParsedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedItem.swift; sourceTree = "<group>"; };
 		6D02D7961D57329600CA76B9 /* NSError+Failure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Failure.swift"; sourceTree = "<group>"; };
 		6D02D7981D57346300CA76B9 /* NetworkLayerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLayerConfiguration.swift; sourceTree = "<group>"; };
+		D95DED9C1E67282700676626 /* String+Encode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Encode.swift"; sourceTree = "<group>"; };
+		D95DED9E1E682C2300676626 /* Data+AppendString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+AppendString.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				6D02D7961D57329600CA76B9 /* NSError+Failure.swift */,
+				D95DED9C1E67282700676626 /* String+Encode.swift */,
+				D95DED9E1E682C2300676626 /* Data+AppendString.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -365,10 +371,12 @@
 			files = (
 				6D02D78A1D5731E600CA76B9 /* UserResponseMapping.swift in Sources */,
 				6D02D7721D57317800CA76B9 /* BackendConfiguration.swift in Sources */,
+				D95DED9F1E682C2300676626 /* Data+AppendString.swift in Sources */,
 				6D02D7891D5731E600CA76B9 /* SignInResponseMapper.swift in Sources */,
 				6D02D7761D57318F00CA76B9 /* BackendService.swift in Sources */,
 				6D02D7741D57318600CA76B9 /* BackendAPIRequest.swift in Sources */,
 				6D02D77C1D5731B600CA76B9 /* ResponseMapper.swift in Sources */,
+				D95DED9D1E67282700676626 /* String+Encode.swift in Sources */,
 				6D02D7821D5731C500CA76B9 /* NetworkService.swift in Sources */,
 				6D02D78E1D5731F900CA76B9 /* SignUpOperation.swift in Sources */,
 				6D02D7921D57320500CA76B9 /* SignUpRequest.swift in Sources */,
