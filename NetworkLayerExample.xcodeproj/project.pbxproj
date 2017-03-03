@@ -35,6 +35,31 @@
 		6D02D7941D57325700CA76B9 /* ParsedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7931D57325700CA76B9 /* ParsedItem.swift */; };
 		6D02D7971D57329600CA76B9 /* NSError+Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7961D57329600CA76B9 /* NSError+Failure.swift */; };
 		6D02D79A1D57346700CA76B9 /* NetworkLayerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7981D57346300CA76B9 /* NetworkLayerConfiguration.swift */; };
+		D95DED9D1E67282700676626 /* String+Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95DED9C1E67282700676626 /* String+Encode.swift */; };
+		D95DED9F1E682C2300676626 /* Data+AppendString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95DED9E1E682C2300676626 /* Data+AppendString.swift */; };
+		D95DEDA71E68312700676626 /* NetworkLayerExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95DEDA61E68312700676626 /* NetworkLayerExampleTests.swift */; };
+		D95DEDAE1E68D79600676626 /* BackendAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7731D57318600CA76B9 /* BackendAPIRequest.swift */; };
+		D95DEDAF1E68D79600676626 /* BackendConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7711D57317800CA76B9 /* BackendConfiguration.swift */; };
+		D95DEDB01E68D79600676626 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7751D57318F00CA76B9 /* BackendService.swift */; };
+		D95DEDB11E68D79600676626 /* ServiceOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7771D57319400CA76B9 /* ServiceOperation.swift */; };
+		D95DEDB21E68D79B00676626 /* ArrayResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7791D5731B200CA76B9 /* ArrayResponseMapper.swift */; };
+		D95DEDB31E68D79B00676626 /* ResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D77B1D5731B600CA76B9 /* ResponseMapper.swift */; };
+		D95DEDB41E68D79F00676626 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D77D1D5731C500CA76B9 /* NetworkOperation.swift */; };
+		D95DEDB51E68D79F00676626 /* NetworkQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D77E1D5731C500CA76B9 /* NetworkQueue.swift */; };
+		D95DEDB61E68D79F00676626 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D77F1D5731C500CA76B9 /* NetworkService.swift */; };
+		D95DEDB71E68D7A300676626 /* NSError+Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7961D57329600CA76B9 /* NSError+Failure.swift */; };
+		D95DEDB81E68D7A300676626 /* String+Encode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95DED9C1E67282700676626 /* String+Encode.swift */; };
+		D95DEDB91E68D7A300676626 /* Data+AppendString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95DED9E1E682C2300676626 /* Data+AppendString.swift */; };
+		D95DEDBA1E68D7A800676626 /* ParsedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7931D57325700CA76B9 /* ParsedItem.swift */; };
+		D95DEDBB1E68D7A800676626 /* SignInItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7831D5731D500CA76B9 /* SignInItem.swift */; };
+		D95DEDBC1E68D7A800676626 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7851D5731DA00CA76B9 /* UserItem.swift */; };
+		D95DEDBD1E68D7AC00676626 /* SignInResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7871D5731E600CA76B9 /* SignInResponseMapper.swift */; };
+		D95DEDBE1E68D7AC00676626 /* UserResponseMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7881D5731E600CA76B9 /* UserResponseMapping.swift */; };
+		D95DEDBF1E68D7B100676626 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D78F1D57320500CA76B9 /* SignInRequest.swift */; };
+		D95DEDC01E68D7B100676626 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7901D57320500CA76B9 /* SignUpRequest.swift */; };
+		D95DEDC11E696F0B00676626 /* NetworkLayerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7981D57346300CA76B9 /* NetworkLayerConfiguration.swift */; };
+		D95DEDC21E69880000676626 /* SignInOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D78B1D5731F900CA76B9 /* SignInOperation.swift */; };
+		D95DEDC31E69880200676626 /* SignUpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D78C1D5731F900CA76B9 /* SignUpOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +69,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6D02D75C1D5730EE00CA76B9;
 			remoteInfo = Network;
+		};
+		D95DEDA91E68312700676626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D02D73B1D5730D800CA76B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D02D7421D5730D800CA76B9;
+			remoteInfo = NetworkLayerExample;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -92,6 +124,11 @@
 		6D02D7931D57325700CA76B9 /* ParsedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsedItem.swift; sourceTree = "<group>"; };
 		6D02D7961D57329600CA76B9 /* NSError+Failure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSError+Failure.swift"; sourceTree = "<group>"; };
 		6D02D7981D57346300CA76B9 /* NetworkLayerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLayerConfiguration.swift; sourceTree = "<group>"; };
+		D95DED9C1E67282700676626 /* String+Encode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Encode.swift"; sourceTree = "<group>"; };
+		D95DED9E1E682C2300676626 /* Data+AppendString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+AppendString.swift"; sourceTree = "<group>"; };
+		D95DEDA41E68312600676626 /* NetworkLayerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkLayerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D95DEDA61E68312700676626 /* NetworkLayerExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayerExampleTests.swift; sourceTree = "<group>"; };
+		D95DEDA81E68312700676626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +147,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D95DEDA11E68312600676626 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -118,6 +162,7 @@
 			children = (
 				6D02D7451D5730D800CA76B9 /* App */,
 				6D02D75E1D5730EE00CA76B9 /* Network */,
+				D95DEDA51E68312700676626 /* NetworkLayerExampleTests */,
 				6D02D7441D5730D800CA76B9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -127,6 +172,7 @@
 			children = (
 				6D02D7431D5730D800CA76B9 /* NetworkLayerExample.app */,
 				6D02D75D1D5730EE00CA76B9 /* Network.framework */,
+				D95DEDA41E68312600676626 /* NetworkLayerExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,8 +280,19 @@
 			isa = PBXGroup;
 			children = (
 				6D02D7961D57329600CA76B9 /* NSError+Failure.swift */,
+				D95DED9C1E67282700676626 /* String+Encode.swift */,
+				D95DED9E1E682C2300676626 /* Data+AppendString.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		D95DEDA51E68312700676626 /* NetworkLayerExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D95DEDA61E68312700676626 /* NetworkLayerExampleTests.swift */,
+				D95DEDA81E68312700676626 /* Info.plist */,
+			);
+			path = NetworkLayerExampleTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,13 +346,31 @@
 			productReference = 6D02D75D1D5730EE00CA76B9 /* Network.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		D95DEDA31E68312600676626 /* NetworkLayerExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D95DEDAD1E68312700676626 /* Build configuration list for PBXNativeTarget "NetworkLayerExampleTests" */;
+			buildPhases = (
+				D95DEDA01E68312600676626 /* Sources */,
+				D95DEDA11E68312600676626 /* Frameworks */,
+				D95DEDA21E68312600676626 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D95DEDAA1E68312700676626 /* PBXTargetDependency */,
+			);
+			name = NetworkLayerExampleTests;
+			productName = NetworkLayerExampleTests;
+			productReference = D95DEDA41E68312600676626 /* NetworkLayerExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		6D02D73B1D5730D800CA76B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Tomasz Szulc";
 				TargetAttributes = {
@@ -306,6 +381,12 @@
 					6D02D75C1D5730EE00CA76B9 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 0800;
+					};
+					D95DEDA31E68312600676626 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = GK5S624D99;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6D02D7421D5730D800CA76B9;
 					};
 				};
 			};
@@ -324,6 +405,7 @@
 			targets = (
 				6D02D7421D5730D800CA76B9 /* NetworkLayerExample */,
 				6D02D75C1D5730EE00CA76B9 /* Network */,
+				D95DEDA31E68312600676626 /* NetworkLayerExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -340,6 +422,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6D02D75B1D5730EE00CA76B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D95DEDA21E68312600676626 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -365,10 +454,12 @@
 			files = (
 				6D02D78A1D5731E600CA76B9 /* UserResponseMapping.swift in Sources */,
 				6D02D7721D57317800CA76B9 /* BackendConfiguration.swift in Sources */,
+				D95DED9F1E682C2300676626 /* Data+AppendString.swift in Sources */,
 				6D02D7891D5731E600CA76B9 /* SignInResponseMapper.swift in Sources */,
 				6D02D7761D57318F00CA76B9 /* BackendService.swift in Sources */,
 				6D02D7741D57318600CA76B9 /* BackendAPIRequest.swift in Sources */,
 				6D02D77C1D5731B600CA76B9 /* ResponseMapper.swift in Sources */,
+				D95DED9D1E67282700676626 /* String+Encode.swift in Sources */,
 				6D02D7821D5731C500CA76B9 /* NetworkService.swift in Sources */,
 				6D02D78E1D5731F900CA76B9 /* SignUpOperation.swift in Sources */,
 				6D02D7921D57320500CA76B9 /* SignUpRequest.swift in Sources */,
@@ -385,6 +476,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D95DEDA01E68312600676626 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D95DEDB61E68D79F00676626 /* NetworkService.swift in Sources */,
+				D95DEDB01E68D79600676626 /* BackendService.swift in Sources */,
+				D95DEDA71E68312700676626 /* NetworkLayerExampleTests.swift in Sources */,
+				D95DEDBA1E68D7A800676626 /* ParsedItem.swift in Sources */,
+				D95DEDB71E68D7A300676626 /* NSError+Failure.swift in Sources */,
+				D95DEDB31E68D79B00676626 /* ResponseMapper.swift in Sources */,
+				D95DEDAF1E68D79600676626 /* BackendConfiguration.swift in Sources */,
+				D95DEDBC1E68D7A800676626 /* UserItem.swift in Sources */,
+				D95DEDB81E68D7A300676626 /* String+Encode.swift in Sources */,
+				D95DEDBB1E68D7A800676626 /* SignInItem.swift in Sources */,
+				D95DEDB91E68D7A300676626 /* Data+AppendString.swift in Sources */,
+				D95DEDBD1E68D7AC00676626 /* SignInResponseMapper.swift in Sources */,
+				D95DEDBE1E68D7AC00676626 /* UserResponseMapping.swift in Sources */,
+				D95DEDB41E68D79F00676626 /* NetworkOperation.swift in Sources */,
+				D95DEDB51E68D79F00676626 /* NetworkQueue.swift in Sources */,
+				D95DEDB21E68D79B00676626 /* ArrayResponseMapper.swift in Sources */,
+				D95DEDBF1E68D7B100676626 /* SignInRequest.swift in Sources */,
+				D95DEDC31E69880200676626 /* SignUpOperation.swift in Sources */,
+				D95DEDC21E69880000676626 /* SignInOperation.swift in Sources */,
+				D95DEDC01E68D7B100676626 /* SignUpRequest.swift in Sources */,
+				D95DEDB11E68D79600676626 /* ServiceOperation.swift in Sources */,
+				D95DEDAE1E68D79600676626 /* BackendAPIRequest.swift in Sources */,
+				D95DEDC11E696F0B00676626 /* NetworkLayerConfiguration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -392,6 +513,11 @@
 			isa = PBXTargetDependency;
 			target = 6D02D75C1D5730EE00CA76B9 /* Network */;
 			targetProxy = 6D02D7621D5730EE00CA76B9 /* PBXContainerItemProxy */;
+		};
+		D95DEDAA1E68312700676626 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D02D7421D5730D800CA76B9 /* NetworkLayerExample */;
+			targetProxy = D95DEDA91E68312700676626 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -577,6 +703,40 @@
 			};
 			name = Release;
 		};
+		D95DEDAB1E68312700676626 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = GK5S624D99;
+				INFOPLIST_FILE = NetworkLayerExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.NetworkLayerExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetworkLayerExample.app/NetworkLayerExample";
+			};
+			name = Debug;
+		};
+		D95DEDAC1E68312700676626 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = GK5S624D99;
+				INFOPLIST_FILE = NetworkLayerExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alessioroberto.NetworkLayerExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NetworkLayerExample.app/NetworkLayerExample";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -606,6 +766,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D95DEDAD1E68312700676626 /* Build configuration list for PBXNativeTarget "NetworkLayerExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D95DEDAB1E68312700676626 /* Debug */,
+				D95DEDAC1E68312700676626 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

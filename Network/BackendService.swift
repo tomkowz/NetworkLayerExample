@@ -2,7 +2,15 @@ import Foundation
 
 public let DidPerformUnauthorizedOperation = "DidPerformUnauthorizedOperation"
 
-class BackendService {
+public protocol BackendService {
+    func request(_ request: BackendAPIRequest,
+                 success: ((AnyObject?) -> Void)?,
+                 failure: ((NSError) -> Void)?)
+    
+    func cancel()
+}
+
+public class MyBackendService: BackendService {
     
     private let conf: BackendConfiguration
     private let service = NetworkService()
@@ -11,13 +19,13 @@ class BackendService {
         self.conf = conf
     }
     
-    func request(_ request: BackendAPIRequest,
+    public func request(_ request: BackendAPIRequest,
                  success: ((AnyObject?) -> Void)? = nil,
                  failure: ((NSError) -> Void)? = nil) {
         
         let url = conf.baseURL.appendingPathComponent(request.endpoint)
         
-        var headers = request.headers
+        let headers = request.headers
         // Set authentication token if available.
 //        headers?["X-Api-Auth-Token"] = BackendAuth.shared.token
         
@@ -49,7 +57,7 @@ class BackendService {
         })
     }
     
-    func cancel() {
+    public func cancel() {
         service.cancel()
     }
 }

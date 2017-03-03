@@ -4,12 +4,12 @@ public class ServiceOperation: NetworkOperation {
     
     let service: BackendService
     
-    public override init() {
-        self.service = BackendService(BackendConfiguration.shared)
+    init(service: BackendService? = nil) {
+        self.service = service ?? MyBackendService(BackendConfiguration.shared)
         super.init()
     }
     
-    public override func cancel() {
+    override public func cancel() {
         service.cancel()
         super.cancel()
     }
