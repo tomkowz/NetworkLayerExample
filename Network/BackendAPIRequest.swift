@@ -1,6 +1,6 @@
 import Foundation
 
-protocol BackendAPIRequest {
+public protocol BackendAPIRequest {
     var endpoint: String { get }
     var method: Method { get }
     var query: Query { get }

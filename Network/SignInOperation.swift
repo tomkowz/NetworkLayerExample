@@ -7,9 +7,9 @@ public class SignInOperation: ServiceOperation {
     public var success: ((SignInItem) -> Void)?
     public var failure: ((NSError) -> Void)?
     
-    public init(email: String, password: String) {
+    public init(email: String, password: String, service: BackendService? = nil) {
         request = SignInRequest(email: email, password: password)
-        super.init()
+        super.init(service: service)
     }
     
     public override func start() {

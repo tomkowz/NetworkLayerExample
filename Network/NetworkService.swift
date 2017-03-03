@@ -6,7 +6,7 @@ import Foundation
 /// - post: POST
 /// - put: PUT
 /// - delete: DELETE
-enum Method: String {
+public enum Method: String {
     case get, post, put, delete
 }
 
@@ -16,11 +16,11 @@ enum Method: String {
 /// - json: Add the parameters in a Json inside the HTTP body request
 /// - path: Add the parameters as query in the URL
 /// - jsonImage: Add the parameters and image bytes in a Json inside the HTTP body request
-enum Query {
+public enum Query {
     case json, path, jsonImage
 }
 
-typealias Parameters = [String: Any]
+public typealias Parameters = [String: Any]
 
 class NetworkService {
     
