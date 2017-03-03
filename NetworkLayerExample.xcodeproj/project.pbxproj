@@ -60,6 +60,10 @@
 		D95DEDC11E696F0B00676626 /* NetworkLayerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7981D57346300CA76B9 /* NetworkLayerConfiguration.swift */; };
 		D95DEDC21E69880000676626 /* SignInOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D78B1D5731F900CA76B9 /* SignInOperation.swift */; };
 		D95DEDC31E69880200676626 /* SignUpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D78C1D5731F900CA76B9 /* SignUpOperation.swift */; };
+		D98BB6CB1E69C60B0085E47B /* NetworkQueryGeneretor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6CA1E69C60B0085E47B /* NetworkQueryGeneretor.swift */; };
+		D98BB6CC1E69C60B0085E47B /* NetworkQueryGeneretor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6CA1E69C60B0085E47B /* NetworkQueryGeneretor.swift */; };
+		D98BB6CE1E69C8130085E47B /* MyBackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6CD1E69C8130085E47B /* MyBackendService.swift */; };
+		D98BB6CF1E69C8130085E47B /* MyBackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6CD1E69C8130085E47B /* MyBackendService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +133,8 @@
 		D95DEDA41E68312600676626 /* NetworkLayerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkLayerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D95DEDA61E68312700676626 /* NetworkLayerExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayerExampleTests.swift; sourceTree = "<group>"; };
 		D95DEDA81E68312700676626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D98BB6CA1E69C60B0085E47B /* NetworkQueryGeneretor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkQueryGeneretor.swift; sourceTree = "<group>"; };
+		D98BB6CD1E69C8130085E47B /* MyBackendService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBackendService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +221,7 @@
 				6D02D7731D57318600CA76B9 /* BackendAPIRequest.swift */,
 				6D02D7711D57317800CA76B9 /* BackendConfiguration.swift */,
 				6D02D7751D57318F00CA76B9 /* BackendService.swift */,
+				D98BB6CD1E69C8130085E47B /* MyBackendService.swift */,
 				6D02D7771D57319400CA76B9 /* ServiceOperation.swift */,
 			);
 			name = Backend;
@@ -233,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				6D02D77D1D5731C500CA76B9 /* NetworkOperation.swift */,
+				D98BB6CA1E69C60B0085E47B /* NetworkQueryGeneretor.swift */,
 				6D02D77E1D5731C500CA76B9 /* NetworkQueue.swift */,
 				6D02D77F1D5731C500CA76B9 /* NetworkService.swift */,
 			);
@@ -463,10 +471,12 @@
 				6D02D7821D5731C500CA76B9 /* NetworkService.swift in Sources */,
 				6D02D78E1D5731F900CA76B9 /* SignUpOperation.swift in Sources */,
 				6D02D7921D57320500CA76B9 /* SignUpRequest.swift in Sources */,
+				D98BB6CE1E69C8130085E47B /* MyBackendService.swift in Sources */,
 				6D02D7811D5731C500CA76B9 /* NetworkQueue.swift in Sources */,
 				6D02D7781D57319400CA76B9 /* ServiceOperation.swift in Sources */,
 				6D02D78D1D5731F900CA76B9 /* SignInOperation.swift in Sources */,
 				6D02D7861D5731DA00CA76B9 /* UserItem.swift in Sources */,
+				D98BB6CB1E69C60B0085E47B /* NetworkQueryGeneretor.swift in Sources */,
 				6D02D77A1D5731B200CA76B9 /* ArrayResponseMapper.swift in Sources */,
 				6D02D7841D5731D500CA76B9 /* SignInItem.swift in Sources */,
 				6D02D7971D57329600CA76B9 /* NSError+Failure.swift in Sources */,
@@ -481,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D95DEDB61E68D79F00676626 /* NetworkService.swift in Sources */,
+				D98BB6CC1E69C60B0085E47B /* NetworkQueryGeneretor.swift in Sources */,
 				D95DEDB01E68D79600676626 /* BackendService.swift in Sources */,
 				D95DEDA71E68312700676626 /* NetworkLayerExampleTests.swift in Sources */,
 				D95DEDBA1E68D7A800676626 /* ParsedItem.swift in Sources */,
@@ -499,6 +510,7 @@
 				D95DEDBF1E68D7B100676626 /* SignInRequest.swift in Sources */,
 				D95DEDC31E69880200676626 /* SignUpOperation.swift in Sources */,
 				D95DEDC21E69880000676626 /* SignInOperation.swift in Sources */,
+				D98BB6CF1E69C8130085E47B /* MyBackendService.swift in Sources */,
 				D95DEDC01E68D7B100676626 /* SignUpRequest.swift in Sources */,
 				D95DEDB11E68D79600676626 /* ServiceOperation.swift in Sources */,
 				D95DEDAE1E68D79600676626 /* BackendAPIRequest.swift in Sources */,
@@ -774,6 +786,7 @@
 				D95DEDAC1E68312700676626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -2,7 +2,7 @@ import Foundation
 
 protocol ResponseMapperProtocol {
     associatedtype Item
-    static func process(_ obj: AnyObject?) throws -> Item
+    static func process(_ obj: Any?) throws -> Item
 }
 
 internal enum ResponseMapperError: Error {
@@ -12,8 +12,8 @@ internal enum ResponseMapperError: Error {
 
 class ResponseMapper<A: ParsedItem> {
     
-    static func process(_ obj: AnyObject?, parse: (_ json: [String: AnyObject]) -> A?) throws -> A {
-        guard let json = obj as? [String: AnyObject] else { throw ResponseMapperError.invalid }
+    static func process(_ obj: Any?, parse: (_ json: [String: Any]) -> A?) throws -> A {
+        guard let json = obj as? [String: Any] else { throw ResponseMapperError.invalid }
         if let item = parse(json) {
             return item
         } else {

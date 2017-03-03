@@ -17,7 +17,7 @@ public class SignInOperation: ServiceOperation {
         service.request(request, success: handleSuccess, failure: handleFailure)
     }
     
-    private func handleSuccess(_ response: AnyObject?) {
+    private func handleSuccess(_ response: Any?) {
         do {
             let item = try SignInResponseMapper.process(response)
             self.success?(item)

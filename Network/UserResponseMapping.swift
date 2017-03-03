@@ -2,7 +2,7 @@ import Foundation
 
 final class UserResponseMapper: ResponseMapper<UserItem>, ResponseMapperProtocol {
     
-    static func process(_ obj: AnyObject?) throws -> UserItem {
+    static func process(_ obj: Any?) throws -> UserItem {
         return try process(obj, parse: { json in
             let uniqueId = json["unique_id"] as? String
             let firstName = json["first_name"] as? String

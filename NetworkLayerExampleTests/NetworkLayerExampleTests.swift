@@ -85,23 +85,23 @@ extension XCTest {
     
     class MockSignInBackendService: BackendService {
         func request(_ request: BackendAPIRequest,
-                              success: ((AnyObject?) -> Void)? = nil,
+                              success: ((Any?) -> Void)? = nil,
                               failure: ((NSError) -> Void)? = nil) {
             
             let result = ["token": MockSignIn.token, "unique_id": MockSignIn.uniqueId]
             
-            success?(result as AnyObject?)
+            success?(result)
         }
         
         internal func cancel() {}
     }
     
     class MockSignUpBackendService: BackendService {
-        func request(_ request: BackendAPIRequest, success: ((AnyObject?) -> Void)?, failure: ((NSError) -> Void)?) {
+        func request(_ request: BackendAPIRequest, success: ((Any?) -> Void)?, failure: ((NSError) -> Void)?) {
             
             let result = ["unique_id": MockSignIn.uniqueId, "first_name": MockSignUp.name, "last_name": MockSignUp.surname, "email": MockSignUp.email, "phone_number": ""]
             
-            success?(result as AnyObject?)
+            success?(result)
         }
         
         internal func cancel() {}
