@@ -1,6 +1,6 @@
 import Foundation
 
-final class SignUpRequest: BackendAPIRequest {
+struct SignUpRequest: BackendAPIRequest {
     
     private let user: UserItem
     private let password: String

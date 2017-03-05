@@ -2,7 +2,7 @@ import Foundation
 
 final class SignInResponseMapper: ResponseMapper<SignInItem>, ResponseMapperProtocol {
     
-    static func process(_ obj: AnyObject?) throws -> SignInItem {
+    static func process(_ obj: Any?) throws -> SignInItem {
         return try process(obj, parse: { json in
             let token = json["token"] as? String
             let uniqueId = json["unique_id"] as? String

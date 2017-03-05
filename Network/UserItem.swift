@@ -1,6 +1,6 @@
 import Foundation
 
-public class UserItem: ParsedItem {
+public struct UserItem: ParsedItem {
     
     /// The property is nil when passed for sign in or sign up operations.
     public let uniqueId: String!

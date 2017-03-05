@@ -1,14 +1,21 @@
+//
+//  UserShoppingOperation.swift
+//  NetworkLayerExample
+//
+//  Created by Alessio Roberto on 05/03/2017.
+//  Copyright © 2017 Tomasz Szulc. All rights reserved.
+//
+
 import Foundation
 
-public class SignUpOperation: ServiceOperation {
+final class UserShoppingOperation: ServiceOperation {
+    private let request: UserShoppingRequest
     
-    private let request: SignUpRequest
-    
-    public var success: ((UserItem) -> Void)? = nil
+    public var success: (([ShoppItem]) -> Void)? = nil
     public var failure: ((NSError) -> Void)? = nil
     
-    public init(user: UserItem, password: String, service: BackendService? = nil) {
-        request = SignUpRequest(user: user, password: password)
+    public init(uniqueId: String, service: BackendService? = nil) {
+        request = UserShoppingRequest(uniqueId: uniqueId)
         super.init(service: service)
     }
     
@@ -19,7 +26,7 @@ public class SignUpOperation: ServiceOperation {
     
     private func handleSuccess(_ response: Any?) {
         do {
-            let item = try UserResponseMapper.process(response)
+            let item = try UserShoppingResponseMapper.process(response)
             self.success?(item)
             self.finish()
         } catch {
