@@ -27,7 +27,7 @@
 		6D02D7841D5731D500CA76B9 /* SignInItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7831D5731D500CA76B9 /* SignInItem.swift */; };
 		6D02D7861D5731DA00CA76B9 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7851D5731DA00CA76B9 /* UserItem.swift */; };
 		6D02D7891D5731E600CA76B9 /* SignInResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7871D5731E600CA76B9 /* SignInResponseMapper.swift */; };
-		6D02D78A1D5731E600CA76B9 /* UserResponseMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7881D5731E600CA76B9 /* UserResponseMapping.swift */; };
+		6D02D78A1D5731E600CA76B9 /* UserResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7881D5731E600CA76B9 /* UserResponseMapper.swift */; };
 		6D02D78D1D5731F900CA76B9 /* SignInOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D78B1D5731F900CA76B9 /* SignInOperation.swift */; };
 		6D02D78E1D5731F900CA76B9 /* SignUpOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D78C1D5731F900CA76B9 /* SignUpOperation.swift */; };
 		6D02D7911D57320500CA76B9 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D78F1D57320500CA76B9 /* SignInRequest.swift */; };
@@ -54,7 +54,7 @@
 		D95DEDBB1E68D7A800676626 /* SignInItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7831D5731D500CA76B9 /* SignInItem.swift */; };
 		D95DEDBC1E68D7A800676626 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7851D5731DA00CA76B9 /* UserItem.swift */; };
 		D95DEDBD1E68D7AC00676626 /* SignInResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7871D5731E600CA76B9 /* SignInResponseMapper.swift */; };
-		D95DEDBE1E68D7AC00676626 /* UserResponseMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7881D5731E600CA76B9 /* UserResponseMapping.swift */; };
+		D95DEDBE1E68D7AC00676626 /* UserResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7881D5731E600CA76B9 /* UserResponseMapper.swift */; };
 		D95DEDBF1E68D7B100676626 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D78F1D57320500CA76B9 /* SignInRequest.swift */; };
 		D95DEDC01E68D7B100676626 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7901D57320500CA76B9 /* SignUpRequest.swift */; };
 		D95DEDC11E696F0B00676626 /* NetworkLayerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D02D7981D57346300CA76B9 /* NetworkLayerConfiguration.swift */; };
@@ -64,6 +64,16 @@
 		D98BB6CC1E69C60B0085E47B /* NetworkQueryGeneretor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6CA1E69C60B0085E47B /* NetworkQueryGeneretor.swift */; };
 		D98BB6CE1E69C8130085E47B /* MyBackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6CD1E69C8130085E47B /* MyBackendService.swift */; };
 		D98BB6CF1E69C8130085E47B /* MyBackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6CD1E69C8130085E47B /* MyBackendService.swift */; };
+		D98BB6D71E6C710B0085E47B /* ResponseMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6D61E6C710B0085E47B /* ResponseMapperProtocol.swift */; };
+		D98BB6D81E6C710B0085E47B /* ResponseMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6D61E6C710B0085E47B /* ResponseMapperProtocol.swift */; };
+		D98BB6DA1E6C71AF0085E47B /* UserShoppingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6D91E6C71AF0085E47B /* UserShoppingRequest.swift */; };
+		D98BB6DB1E6C71AF0085E47B /* UserShoppingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6D91E6C71AF0085E47B /* UserShoppingRequest.swift */; };
+		D98BB6DD1E6C73060085E47B /* UserShoppingResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6DC1E6C73060085E47B /* UserShoppingResponseMapper.swift */; };
+		D98BB6DE1E6C73060085E47B /* UserShoppingResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6DC1E6C73060085E47B /* UserShoppingResponseMapper.swift */; };
+		D98BB6E01E6C73520085E47B /* ShoppItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6DF1E6C73520085E47B /* ShoppItem.swift */; };
+		D98BB6E11E6C73520085E47B /* ShoppItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6DF1E6C73520085E47B /* ShoppItem.swift */; };
+		D98BB6E31E6C79F20085E47B /* UserShoppingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6E21E6C79F20085E47B /* UserShoppingOperation.swift */; };
+		D98BB6E41E6C79F20085E47B /* UserShoppingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98BB6E21E6C79F20085E47B /* UserShoppingOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,7 +130,7 @@
 		6D02D7831D5731D500CA76B9 /* SignInItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInItem.swift; sourceTree = "<group>"; };
 		6D02D7851D5731DA00CA76B9 /* UserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 		6D02D7871D5731E600CA76B9 /* SignInResponseMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInResponseMapper.swift; sourceTree = "<group>"; };
-		6D02D7881D5731E600CA76B9 /* UserResponseMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponseMapping.swift; sourceTree = "<group>"; };
+		6D02D7881D5731E600CA76B9 /* UserResponseMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserResponseMapper.swift; sourceTree = "<group>"; };
 		6D02D78B1D5731F900CA76B9 /* SignInOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInOperation.swift; sourceTree = "<group>"; };
 		6D02D78C1D5731F900CA76B9 /* SignUpOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpOperation.swift; sourceTree = "<group>"; };
 		6D02D78F1D57320500CA76B9 /* SignInRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
@@ -135,6 +145,11 @@
 		D95DEDA81E68312700676626 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D98BB6CA1E69C60B0085E47B /* NetworkQueryGeneretor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkQueryGeneretor.swift; sourceTree = "<group>"; };
 		D98BB6CD1E69C8130085E47B /* MyBackendService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBackendService.swift; sourceTree = "<group>"; };
+		D98BB6D61E6C710B0085E47B /* ResponseMapperProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseMapperProtocol.swift; sourceTree = "<group>"; };
+		D98BB6D91E6C71AF0085E47B /* UserShoppingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserShoppingRequest.swift; sourceTree = "<group>"; };
+		D98BB6DC1E6C73060085E47B /* UserShoppingResponseMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserShoppingResponseMapper.swift; sourceTree = "<group>"; };
+		D98BB6DF1E6C73520085E47B /* ShoppItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppItem.swift; sourceTree = "<group>"; };
+		D98BB6E21E6C79F20085E47B /* UserShoppingOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserShoppingOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +247,7 @@
 			children = (
 				6D02D7791D5731B200CA76B9 /* ArrayResponseMapper.swift */,
 				6D02D77B1D5731B600CA76B9 /* ResponseMapper.swift */,
+				D98BB6D61E6C710B0085E47B /* ResponseMapperProtocol.swift */,
 			);
 			name = "Core Mapping";
 			sourceTree = "<group>";
@@ -253,6 +269,7 @@
 				6D02D7931D57325700CA76B9 /* ParsedItem.swift */,
 				6D02D7831D5731D500CA76B9 /* SignInItem.swift */,
 				6D02D7851D5731DA00CA76B9 /* UserItem.swift */,
+				D98BB6DF1E6C73520085E47B /* ShoppItem.swift */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -261,7 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				6D02D7871D5731E600CA76B9 /* SignInResponseMapper.swift */,
-				6D02D7881D5731E600CA76B9 /* UserResponseMapping.swift */,
+				6D02D7881D5731E600CA76B9 /* UserResponseMapper.swift */,
+				D98BB6DC1E6C73060085E47B /* UserShoppingResponseMapper.swift */,
 			);
 			name = Mappers;
 			sourceTree = "<group>";
@@ -271,6 +289,7 @@
 			children = (
 				6D02D78B1D5731F900CA76B9 /* SignInOperation.swift */,
 				6D02D78C1D5731F900CA76B9 /* SignUpOperation.swift */,
+				D98BB6E21E6C79F20085E47B /* UserShoppingOperation.swift */,
 			);
 			name = Operations;
 			sourceTree = "<group>";
@@ -280,6 +299,7 @@
 			children = (
 				6D02D78F1D57320500CA76B9 /* SignInRequest.swift */,
 				6D02D7901D57320500CA76B9 /* SignUpRequest.swift */,
+				D98BB6D91E6C71AF0085E47B /* UserShoppingRequest.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -460,11 +480,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D02D78A1D5731E600CA76B9 /* UserResponseMapping.swift in Sources */,
+				6D02D78A1D5731E600CA76B9 /* UserResponseMapper.swift in Sources */,
 				6D02D7721D57317800CA76B9 /* BackendConfiguration.swift in Sources */,
+				D98BB6DA1E6C71AF0085E47B /* UserShoppingRequest.swift in Sources */,
 				D95DED9F1E682C2300676626 /* Data+AppendString.swift in Sources */,
 				6D02D7891D5731E600CA76B9 /* SignInResponseMapper.swift in Sources */,
 				6D02D7761D57318F00CA76B9 /* BackendService.swift in Sources */,
+				D98BB6D71E6C710B0085E47B /* ResponseMapperProtocol.swift in Sources */,
 				6D02D7741D57318600CA76B9 /* BackendAPIRequest.swift in Sources */,
 				6D02D77C1D5731B600CA76B9 /* ResponseMapper.swift in Sources */,
 				D95DED9D1E67282700676626 /* String+Encode.swift in Sources */,
@@ -474,11 +496,14 @@
 				D98BB6CE1E69C8130085E47B /* MyBackendService.swift in Sources */,
 				6D02D7811D5731C500CA76B9 /* NetworkQueue.swift in Sources */,
 				6D02D7781D57319400CA76B9 /* ServiceOperation.swift in Sources */,
+				D98BB6DD1E6C73060085E47B /* UserShoppingResponseMapper.swift in Sources */,
 				6D02D78D1D5731F900CA76B9 /* SignInOperation.swift in Sources */,
+				D98BB6E31E6C79F20085E47B /* UserShoppingOperation.swift in Sources */,
 				6D02D7861D5731DA00CA76B9 /* UserItem.swift in Sources */,
 				D98BB6CB1E69C60B0085E47B /* NetworkQueryGeneretor.swift in Sources */,
 				6D02D77A1D5731B200CA76B9 /* ArrayResponseMapper.swift in Sources */,
 				6D02D7841D5731D500CA76B9 /* SignInItem.swift in Sources */,
+				D98BB6E01E6C73520085E47B /* ShoppItem.swift in Sources */,
 				6D02D7971D57329600CA76B9 /* NSError+Failure.swift in Sources */,
 				6D02D7801D5731C500CA76B9 /* NetworkOperation.swift in Sources */,
 				6D02D7911D57320500CA76B9 /* SignInRequest.swift in Sources */,
@@ -495,6 +520,8 @@
 				D95DEDB01E68D79600676626 /* BackendService.swift in Sources */,
 				D95DEDA71E68312700676626 /* NetworkLayerExampleTests.swift in Sources */,
 				D95DEDBA1E68D7A800676626 /* ParsedItem.swift in Sources */,
+				D98BB6DB1E6C71AF0085E47B /* UserShoppingRequest.swift in Sources */,
+				D98BB6E41E6C79F20085E47B /* UserShoppingOperation.swift in Sources */,
 				D95DEDB71E68D7A300676626 /* NSError+Failure.swift in Sources */,
 				D95DEDB31E68D79B00676626 /* ResponseMapper.swift in Sources */,
 				D95DEDAF1E68D79600676626 /* BackendConfiguration.swift in Sources */,
@@ -503,7 +530,7 @@
 				D95DEDBB1E68D7A800676626 /* SignInItem.swift in Sources */,
 				D95DEDB91E68D7A300676626 /* Data+AppendString.swift in Sources */,
 				D95DEDBD1E68D7AC00676626 /* SignInResponseMapper.swift in Sources */,
-				D95DEDBE1E68D7AC00676626 /* UserResponseMapping.swift in Sources */,
+				D95DEDBE1E68D7AC00676626 /* UserResponseMapper.swift in Sources */,
 				D95DEDB41E68D79F00676626 /* NetworkOperation.swift in Sources */,
 				D95DEDB51E68D79F00676626 /* NetworkQueue.swift in Sources */,
 				D95DEDB21E68D79B00676626 /* ArrayResponseMapper.swift in Sources */,
@@ -513,6 +540,9 @@
 				D98BB6CF1E69C8130085E47B /* MyBackendService.swift in Sources */,
 				D95DEDC01E68D7B100676626 /* SignUpRequest.swift in Sources */,
 				D95DEDB11E68D79600676626 /* ServiceOperation.swift in Sources */,
+				D98BB6E11E6C73520085E47B /* ShoppItem.swift in Sources */,
+				D98BB6DE1E6C73060085E47B /* UserShoppingResponseMapper.swift in Sources */,
+				D98BB6D81E6C710B0085E47B /* ResponseMapperProtocol.swift in Sources */,
 				D95DEDAE1E68D79600676626 /* BackendAPIRequest.swift in Sources */,
 				D95DEDC11E696F0B00676626 /* NetworkLayerConfiguration.swift in Sources */,
 			);

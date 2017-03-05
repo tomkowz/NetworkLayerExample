@@ -9,7 +9,6 @@ public protocol BackendAPIRequest {
 }
 
 extension BackendAPIRequest {
-    
     func defaultJSONHeaders() -> [String: String] {
         return ["Content-Type": "application/json"]
     }

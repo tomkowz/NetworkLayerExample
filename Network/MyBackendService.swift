@@ -8,8 +8,6 @@
 
 import Foundation
 
-public let DidPerformUnauthorizedOperation = "DidPerformUnauthorizedOperation"
-
 public class MyBackendService: BackendService {
     
     private let conf: BackendConfiguration
@@ -37,12 +35,6 @@ public class MyBackendService: BackendService {
             success?(json)
             
         }, failure: { data, error, statusCode in
-            if statusCode == 401 {
-                // Operation not authorized
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: DidPerformUnauthorizedOperation), object: nil)
-                return
-            }
-            
             if let data = data {
                 let json = try? JSONSerialization.jsonObject(with: data as Data, options: []) as AnyObject
                 let info = [
