@@ -1,6 +1,6 @@
 import Foundation
 
-final class SignUpRequest: BackendAPIRequest {
+struct SignUpRequest: BackendAPIRequest {
     
     private let user: UserItem
     private let password: String
@@ -14,11 +14,11 @@ final class SignUpRequest: BackendAPIRequest {
         return "/users"
     }
     
-    var method: NetworkService.Method {
+    var method: Method {
         return .post
     }
     
-    var query: NetworkService.QueryType {
+    var query: Query {
         return .json
     }
     

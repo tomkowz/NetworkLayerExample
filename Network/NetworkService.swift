@@ -1,27 +1,41 @@
 import Foundation
 
+/// REST Methods
+///
+/// - get: GET
+/// - post: POST
+/// - put: PUT
+/// - delete: DELETE
+public enum Method: String {
+    case get, post, put, delete
+}
+
+
+/// The differents types of query
+///
+/// - json: Add the parameters in a Json inside the HTTP body request
+/// - path: Add the parameters as query in the URL
+/// - jsonImage: Add the parameters and image bytes in a Json inside the HTTP body request
+public enum Query {
+    case json, path, jsonImage
+}
+
+public typealias Parameters = [String: Any]
+
 class NetworkService {
     
     private var task: URLSessionDataTask?
     private var successCodes: CountableRange<Int> = 200..<299
     private var failureCodes: CountableRange<Int> = 400..<499
     
-    enum Method: String {
-        case get, post, put, delete
-    }
-    
-    enum QueryType {
-        case json, path
-    }
-    
-    func makeRequest(for url: URL, method: Method, query type: QueryType,
-                     params: [String: Any]? = nil,
+    func makeRequest(for url: URL, method: Method, query type: Query,
+                     params: Parameters? = nil,
                      headers: [String: String]? = nil,
                      success: ((Data?) -> Void)? = nil,
                      failure: ((_ data: Data?, _ error: NSError?, _ responseCode: Int) -> Void)? = nil) {
         
         
-        var mutableRequest = makeQuery(for: url, params: params, type: type)
+        var mutableRequest = NetworkQueryGeneretor().makeQuery(for: url, params: params, type: type)
         
         mutableRequest.allHTTPHeaderFields = headers
         mutableRequest.httpMethod = method.rawValue
@@ -65,33 +79,4 @@ class NetworkService {
     func cancel() {
         task?.cancel()
     }
-    
-    
-    //MARK: Private
-    private func makeQuery(for url: URL, params: [String: Any]?, type: QueryType) -> URLRequest {
-        switch type {
-        case .json:
-            var mutableRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
-                                            timeoutInterval: 10.0)
-            if let params = params {
-                mutableRequest.httpBody = try! JSONSerialization.data(withJSONObject: params, options: [])
-            }
-            
-            return mutableRequest
-        case .path:
-            var query = ""
-            
-            params?.forEach { key, value in
-                query = query + "\(key)=\(value)&"
-            }
-            
-            var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
-            components.query = query
-            
-            return URLRequest(url: components.url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
-        }
-        
-    }
 }
-
-
