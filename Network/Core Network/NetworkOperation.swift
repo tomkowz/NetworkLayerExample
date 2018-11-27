@@ -27,7 +27,7 @@ public class NetworkOperation: Operation {
         set { update({ self._isCancelled = newValue }, key: "isCancelled") }
     }
     
-    private func update(_ change: (Void) -> Void, key: String) {
+    private func update(_ change: () -> Void, key: String) {
         willChangeValue(forKey: key)
         change()
         didChangeValue(forKey: key)

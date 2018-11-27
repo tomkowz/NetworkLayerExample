@@ -23,7 +23,7 @@ class Demo {
                             phoneNumber: "+48788434094")
         let signUpOp = SignUpOperation(user: user, password: "?8TMx6avi6}2xw&7")
         signUpOp.success = { item in
-            print("User id is \(item.uniqueId)")
+            print("User id is \(String(describing: item.uniqueId))")
         }
         
         signUpOp.failure = { error in print(error.localizedDescription) }
